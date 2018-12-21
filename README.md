@@ -2,11 +2,10 @@
 
 Le but de ce projet est de netoyer une image bruité ou ayant une partie manquante à l'aide d'outils de machine learning. Vous pouvez trouver ci-dessous les résultats de notre algorithme :
 
-<!-- <center> -->
-<!--   <img src="https://github.com/NicolasBizzozzero/Inpainting/blob/master/report/res/lena_color_512_0_1.png" alt="Example Lena 10%"> -->
-<!--   <img src="https://github.com/NicolasBizzozzero/Inpainting/blob/master/report/res/lena_color_512_0_5.png" alt="Example Lena 50%"> -->
-<!--   <img src="https://github.com/NicolasBizzozzero/Inpainting/blob/master/report/res/outdoor_parfait.png" alt="Example outdoor"> -->
-<!-- </center> -->
+<center>
+  <img src="https://github.com/Kabegami/Inpainting/blob/master/res/README_images/lena_noise" alt="Example Lena 50%">
+    <img src="https://github.com/Kabegami/Inpainting/blob/master/res/README_images/lena_original" alt="Example Lena original">
+</center>
 
 
 ## Instuctions
@@ -14,6 +13,15 @@ Le but de ce projet est de netoyer une image bruité ou ayant une partie manquan
 1. Il faut mettre les images dans data/images.
 2. Il faut lancer main --image_name <image_name> --method alpha pour calculer les paramètres utilisés par l'algorithme de machine learning. Cette étape est **obligatoire**.
 3. Vous pouvez choisir entre netoyer une image d'un bruit avec --method noise ou un trou dans l'image avec heuristique ou neighbour.
+
+## Explications
+
+On décompose l'image en petit patch de taille h qui sont des bouts d'images. On utilise ensuite une régression Lasso afin d'exprimer les pixel du patch à corriger en tant que combinaison linéaire des patchs non bruités. Une des propriétées de cette algorithme est qu'elle retourne des résultats sparse ce qui signifie qu'on reconstruit l'erreur avec peu de patch. Cette propriété est interessante car prendre tous les coefficients conduit à avoir des effet de flou car il "moyenne" les résultats.
+
+Pour la correction de trous dans l'image, l'ordre de réparation des pixels est primordial et différentes heuristiques sont étudiées.
+
+Pour plus d'information, vous pouvez lire le rapport dans report
+
 
 ## Sources
 
