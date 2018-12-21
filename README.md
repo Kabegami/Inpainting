@@ -4,7 +4,10 @@ Le but de ce projet est de nettoyer une image bruité ou ayant une partie manqua
 
 ![Example Lena 50%](https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_noise.png)
 
-![Example Lena original](https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original.png)
+![Example Lena original](res/README_images/lena_original.png)
+![Example Lena original](.//res/README_images/lena_original.png)
+
+<!-- ![Example Lena original](https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original.png) -->
 
 
 ## Instructions
