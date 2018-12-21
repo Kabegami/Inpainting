@@ -3,8 +3,8 @@
 Le but de ce projet est de nettoyer une image bruité ou ayant une partie manquante à l'aide d'outils de machine learning. Vous pouvez trouver ci-dessous les résultats de notre algorithme :
 
 <center>
-  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_noise" alt="Example Lena 50%">
-  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original" alt="Example Lena original">
+  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_noise.png" alt="Example Lena 50%">
+  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original.png" alt="Example Lena original">
 </center>
 
 
