@@ -3,7 +3,11 @@
 Le but de ce projet est de nettoyer une image bruité ou ayant une partie manquante à l'aide d'outils de machine learning. Vous pouvez trouver ci-dessous les résultats de notre algorithme : format (originale, bruit, correction)
 
 
-![Correction de bruit](res/README_images/small_noise_example)
+![Correction de bruit](res/README_images/small_noise_example.jpg)
+
+![Correction de trou](res/README_images/hole_example.jpg)
+
+
 
 
 <!-- ![Example Lena original](https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original.png) -->
