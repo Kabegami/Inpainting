@@ -1,26 +1,28 @@
 # Presentation : Inpainting
 
-Le but de ce projet est de netoyer une image bruité ou ayant une partie manquante à l'aide d'outils de machine learning. Vous pouvez trouver ci-dessous les résultats de notre algorithme :
+Le but de ce projet est de nettoyer une image bruité ou ayant une partie manquante à l'aide d'outils de machine learning. Vous pouvez trouver ci-dessous les résultats de notre algorithme :
 
 <center>
-  <img src="https://github.com/Kabegami/Inpainting/blob/master/res/README_images/lena_noise" alt="Example Lena 50%">
-    <img src="https://github.com/Kabegami/Inpainting/blob/master/res/README_images/lena_original" alt="Example Lena original">
+  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_noise" alt="Example Lena 50%">
+  <img src="https://github.com/Kabegami/Inpainting/tree/master/res/README_images/lena_original" alt="Example Lena original">
 </center>
 
 
-## Instuctions
+## Instructions
 
 1. Il faut mettre les images dans data/images.
-2. Il faut lancer main --image_name <image_name> --method alpha pour calculer les paramètres utilisés par l'algorithme de machine learning. Cette étape est **obligatoire**.
-3. Vous pouvez choisir entre netoyer une image d'un bruit avec --method noise ou un trou dans l'image avec heuristique ou neighbour.
+2. Il faut lancer : `python main.py --image_name <image_name> --method alpha` pour calculer les paramètres utilisés par l'algorithme de machine learning. Cette étape est **obligatoire**.
+3. Vous pouvez choisir entre nettoyer une image d'un bruit avec --method noise ou un trou dans l'image avec heuristique ou neighbour.
 
 ## Explications
 
-On décompose l'image en petit patch de taille h qui sont des bouts d'images. On utilise ensuite une régression Lasso afin d'exprimer les pixel du patch à corriger en tant que combinaison linéaire des patchs non bruités. Une des propriétées de cette algorithme est qu'elle retourne des résultats sparse ce qui signifie qu'on reconstruit l'erreur avec peu de patch. Cette propriété est interessante car prendre tous les coefficients conduit à avoir des effet de flou car il "moyenne" les résultats.
+On décompose l'image en petit patch de taille h qui sont des bouts d'images. On utilise ensuite une régression Lasso afin d'exprimer les pixels du patch à corriger en tant que combinaison linéaire des patchs non bruités. Une des propriétés de cet algorithme est qu'il retourne des résultats sparses ce qui signifie qu'on reconstruit l'erreur avec peu de patch. Cette propriété est intéressante car prendre tous les coefficients conduit à avoir des effet de flou car il "moyenne" les résultats.
 
 Pour la correction de trous dans l'image, l'ordre de réparation des pixels est primordial et différentes heuristiques sont étudiées.
+Une heuristique consiste à corriger en priorité les pixels qui ont le plus de voisins non bruités(avec une préférence pour les pixels qui n'ont pas été corrigés).
+Nous avons également implémenté une heuristique à base de confiance décrite plus en détail dans le rapport.
 
-Pour plus d'information, vous pouvez lire le rapport dans report
+
 
 
 ## Sources
